@@ -14,7 +14,7 @@ cd $HOME
 # tar -cf caches.tar.gz -I pigz .gradle/caches
 # tar -cf wrapper.tar.gz -I pigz .gradle/wrapper
 # ls -al
-cd $HOME/.gradle/caches
+cd $HOME/.gradle/caches/modules-2/files-2.1
 ls -al
 cd $HOME/.gradle/wrapper/dists
 ls -al
