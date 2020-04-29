@@ -1,2 +1,5 @@
-cd fy-travis-projects/genie/.gradle/
+pwd
+cd fy-travis-projects/genie/
+ls -al
+cd fy-travis-projects/genie/.gradle
 ls -al
