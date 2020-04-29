@@ -10,6 +10,13 @@ before_install:
   ~/.ssh/id_rsa_travis" >> ~/.ssh/config
 addons:
   ssh_known_hosts: 198e3e504d5ee164.natapp.cc
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
 install: true
 script:
   - ./gradlew assemble
