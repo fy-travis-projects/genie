@@ -11,7 +11,8 @@ chmod o-wx ~/.ssh/config
 # sudo apt-get install -y pigz
 # cd ~/
 # tar -cf repo.tar.gz -I pigz .gradle
-cd ~/build/penelope24/.gradle
+pwd
+cd ~/build/penelope24/
 ls -al
 
 # dirs=(~/build/penelope24/*/)
