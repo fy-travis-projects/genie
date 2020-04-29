@@ -11,10 +11,13 @@ chmod o-wx ~/.ssh/config
 # sudo apt-get install -y pigz
 # cd ~/
 # tar -cf repo.tar.gz -I pigz .gradle
-pwd
-cd ~/
-pwd
+cd /home/travis/build/fy-travis-projects/genie/
 ls -al
+cd /home/travis/fy-travis-projects/genie/
+ls -al
+
+
+
 dirs=(/home/travis/build/fy-travis-projects/genie/)
 name="$(cut -d'/' -f6 <<<"${dirs[0]}")"
 echo $dirs
