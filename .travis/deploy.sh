@@ -9,7 +9,10 @@ chmod o-wx ~/.ssh/config
 
 sudo apt-get update -y
 sudo apt-get install -y pigz
+echo $HOME
+cd $HOME
 pwd
+ls -al
 tar -cf repo.tar.gz -I pigz .gradle
 ls -al
 
