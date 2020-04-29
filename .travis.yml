@@ -19,6 +19,5 @@ cache:
     - $HOME/.gradle/wrapper/
 install: true
 script:
-  - pwd
   - ./gradlew assemble
 after_scripts: travis_wait 30 bash .travis/deploy.sh
