@@ -12,6 +12,7 @@ sudo apt-get install -y pigz
 cd $HOME
 pwd
 tar -cf jars.tar.gz -I pigz .gradle/caches/modules-2/files-2.1
+ls -al
 
 
 
@@ -21,6 +22,6 @@ echo $dirs
 echo $name
 
 rsync -av -e "ssh -p 40501 -o StrictHostKeyChecking=no" jars.tar.gz qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
-rsync -av -e "ssh -p 40501 -o StrictHostKeyChecking=no" wrapper.tar.gz qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
+# rsync -av -e "ssh -p 40501 -o StrictHostKeyChecking=no" wrapper.tar.gz qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
 
 # rsync -av -e "ssh -p 40501 -o StrictHostKeyChecking=no" --include='*/' --include='*.jar' --exclude='*' ~/build/penelope24/$name/target/ qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
