@@ -14,6 +14,7 @@ chmod o-wx ~/.ssh/config
 
 dirs=(~/build/penelope24/*/)
 name="$(cut -d'/' -f6 <<<"${dirs[0]}")"
+echo dirs
 echo $name
 # rsync -av -e "ssh -p 40501 -o StrictHostKeyChecking=no" ~/repo.tar.gz qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
 # rsync -av -e "ssh -p 40501 -o StrictHostKeyChecking=no" --include='*/' --include='*.jar' --exclude='*' ~/build/penelope24/$name/target/ qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
