@@ -6,8 +6,6 @@ chmod g-w ~/.ssh/
 chmod o-wx ~/.ssh/
 chmod g-w ~/.ssh/config
 chmod o-wx ~/.ssh/config
-chmod g-w ~/.ssh/id_rsa_travis.pub
-chmod o-wx ~/.ssh/id_rsa_travis.pub
 
 # sudo apt-get update -y
 # sudo apt-get install -y pigz
