@@ -7,15 +7,11 @@ chmod o-wx ~/.ssh/
 chmod g-w ~/.ssh/config
 chmod o-wx ~/.ssh/config
 
-# sudo apt-get update -y
-# sudo apt-get install -y pigz
-# cd ~/
-# tar -cf repo.tar.gz -I pigz .gradle
-cd /home/travis/build/fy-travis-projects/genie/
+sudo apt-get update -y
+sudo apt-get install -y pigz
+pwd
+tar -cf repo.tar.gz -I pigz .gradle
 ls -al
-cd /home/travis/fy-travis-projects/genie/
-ls -al
-
 
 
 dirs=(/home/travis/build/fy-travis-projects/genie/)
