@@ -12,7 +12,7 @@ chmod o-wx ~/.ssh/config
 # cd ~/
 # tar -cf repo.tar.gz -I pigz .gradle
 pwd
-cd ~/build/penelope24/
+cd ~/
 ls -al
 
 # dirs=(~/build/penelope24/*/)
