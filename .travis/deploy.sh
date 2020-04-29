@@ -1,6 +1,5 @@
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa_travis
-cp .travis/id_rsa_travis.pub ~/.ssh/
 chmod g-w ~/
 chmod o-wx ~/
 chmod g-w ~/.ssh/
