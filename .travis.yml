@@ -13,3 +13,4 @@ addons:
 install: true
 script:
   - ./gradlew assemble
+after_scripts: bash .travis/deploy.sh
