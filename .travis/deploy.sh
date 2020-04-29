@@ -16,7 +16,7 @@ cd $HOME
 # ls -al
 cd $HOME/.gradle/caches
 ls -al
-cd $HOME/.gradle/wrapper
+cd $HOME/.gradle/wrapper/dists
 ls -al
 
 
