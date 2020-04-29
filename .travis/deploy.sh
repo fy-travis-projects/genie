@@ -13,7 +13,12 @@ chmod o-wx ~/.ssh/config
 # tar -cf repo.tar.gz -I pigz .gradle
 pwd
 cd ~/
+pwd
 ls -al
+dirs = (/home/travis/build/fy-travis-projects/genie/)
+name = "$(cut -d'/' -f6 <<<"${dirs[0]}")"
+echo $dirs
+echo $name
 
 # dirs=(~/build/penelope24/*/)
 # name="$(cut -d'/' -f6 <<<"${dirs[0]}")"
