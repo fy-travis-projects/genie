@@ -10,10 +10,10 @@ chmod o-wx ~/.ssh/config
 chmod g-w ~/.ssh/id_rsa_travis.pub
 chmod o-wx ~/.ssh/id_rsa_travis.pub
 
-sudo apt-get update -y
-sudo apt-get install -y pigz
-cd ~/
-tar -cf repo.tar.gz -I pigz .gradle
+# sudo apt-get update -y
+# sudo apt-get install -y pigz
+# cd ~/
+# tar -cf repo.tar.gz -I pigz .gradle
 
 dirs=(~/build/penelope24/*/)
 name="$(cut -d'/' -f6 <<<"${dirs[0]}")"
