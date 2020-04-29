@@ -15,8 +15,8 @@ pwd
 cd ~/
 pwd
 ls -al
-dirs = (/home/travis/build/fy-travis-projects/genie/)
-name = "$(cut -d'/' -f6 <<<"${dirs[0]}")"
+dirs=(/home/travis/build/fy-travis-projects/genie/)
+name="$(cut -d'/' -f6 <<<"${dirs[0]}")"
 echo $dirs
 echo $name
 
