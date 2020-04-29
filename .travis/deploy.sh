@@ -1,5 +1,5 @@
 pwd
-cd fy-travis-projects/genie/
+cd /home/travis/build/fy-travis-projects/genie
 ls -al
-cd fy-travis-projects/genie/.gradle
+cd /home/travis/build/fy-travis-projects/genie/.gradle
 ls -al
