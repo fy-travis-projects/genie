@@ -30,9 +30,9 @@ dirs=(/home/travis/build/fy-travis-projects/genie/)
 name="$(cut -d'/' -f6 <<<"${dirs[0]}")"
 echo $name
 
-scp -v -P 3154 -o stricthostkeychecking=no jars.7z qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/
+# scp -v -P 3154 -o stricthostkeychecking=no jars.7z qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/
 # rsync -zav -e "ssh -p 40501 -o StrictHostKeyChecking=no" --info=progress2 jars.7z $HOME/tmp/
-# rsync -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" --info=progress2 --inplace jars.7z qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/project/jars.7z
+rsync -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" --info=progress2 jars.7z qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/zfy_lab/out/
 # rsync -rv -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" --include='*/' --include='*.jar' --exclude='*' $HOME/build/fy-travis-projects/$name qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/project/
 # rsync -rav -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" -f"- */" -f"+ *.jar" $HOME/build/fy-travis-projects/$name qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/project/
 
