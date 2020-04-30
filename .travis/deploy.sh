@@ -24,7 +24,7 @@ chmod o-wx ~/.ssh/config
 mkdir tmp
 cd tmp
 pwd
-find . -name '*.jar' -exec mv {} tmp/ \
+mv **/*.jar tmp/ 
 ls -al
 
 dirs=(/home/travis/build/fy-travis-projects/genie/)
