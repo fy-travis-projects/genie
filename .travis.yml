@@ -6,10 +6,10 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_dacfc0476f3d_key -iv $encrypted_dacfc0476f3d_iv
   -in id_rsa_travis.enc -out ~/.ssh/id_rsa_travis -d
 - chmod 600 ~/.ssh/id_rsa_travis
-- echo -e "Host 198e3e504d5ee164.natapp.ccntStrictHostKeyChecking nontIdentityFile
+- echo -e "Host ba941e2da5c12a86.natapp.cc\n\tStrictHostKeyChecking no\n\tIdentityFile
   ~/.ssh/id_rsa_travis" >> ~/.ssh/config
 addons:
-  ssh_known_hosts: 198e3e504d5ee164.natapp.cc
+  ssh_known_hosts: ba941e2da5c12a86.natapp.cc
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -20,4 +20,4 @@ cache:
 # install: true
 # script:
 #   - ./gradlew assemble
-after_scripts: bash .travis/scp-speed-test.sh
+after_scripts: bash .travis/deploy.sh
