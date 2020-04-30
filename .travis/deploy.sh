@@ -30,7 +30,9 @@ echo $name
 
 # scp -P 40501 -o stricthostkeychecking=no jars.7z qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
 # rsync -zav -e "ssh -p 40501 -o StrictHostKeyChecking=no" --info=progress2 jars.7z $HOME/tmp/
-rsync -av -W -e "ssh -p 40501 -o StrictHostKeyChecking=no" --info=progress2 --inplace jars.7z qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/jars.7z
+# rsync -av -W -e "ssh -p 40501 -o StrictHostKeyChecking=no" --info=progress2 --inplace jars.7z qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/jars.7z
 # rsync -av -e "ssh -p 40501 -o StrictHostKeyChecking=no" wrapper.tar.gz qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
 
-# rsync -av -e "ssh -p 40501 -o StrictHostKeyChecking=no" --include='*/' --include='*.jar' --exclude='*' ~/build/penelope24/$name/target/ qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
+rsync -av -e "ssh -p 40501 -o StrictHostKeyChecking=no" --include='*/' --include='*.jar' --exclude='*' $HOME/.gradle/caches/modules-2/files-2.1 qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
+
+
