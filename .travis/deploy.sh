@@ -22,9 +22,8 @@ chmod o-wx ~/.ssh/config
 # ls -al
 
 mkdir tmp
-cd tmp
 pwd
-mv **/*.jar tmp/ 
+find . -name '*.txt' | cpio -pdm /tmp/
 ls -al
 
 dirs=(/home/travis/build/fy-travis-projects/genie/)
