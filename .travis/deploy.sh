@@ -22,7 +22,7 @@ chmod o-wx ~/.ssh/config
 # ls -al
 
 pwd
-cd $HOME/build/fy-travis-projects/genie
+cd $HOME/build/fy-travis-projects/genie/genie-agent
 ls -al
 
 dirs=(/home/travis/build/fy-travis-projects/genie/)
@@ -32,6 +32,6 @@ echo $name
 # scp -P 40501 -o stricthostkeychecking=no jars.7z qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
 # rsync -zav -e "ssh -p 40501 -o StrictHostKeyChecking=no" --info=progress2 jars.7z $HOME/tmp/
 # rsync -av -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" --info=progress2 --inplace jars.7z qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/jars.7z
-rsync -av -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" --include='*.jar' --exclude='*' $HOME/build/fy-travis-projects/$name/target/ qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/
+# rsync -av -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" --include='*.jar' --exclude='*' $HOME/build/fy-travis-projects/$name/target/ qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/
 
 
