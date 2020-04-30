@@ -22,7 +22,7 @@ chmod o-wx ~/.ssh/config
 # ls -al
 
 pwd
-cd $HOME/build
+cd $HOME/build/fy-travis-projects
 ls -al
 
 dirs=(/home/travis/build/fy-travis-projects/genie/)
