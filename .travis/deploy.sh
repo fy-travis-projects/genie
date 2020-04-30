@@ -21,13 +21,13 @@ chmod o-wx ~/.ssh/config
 # mkdir tmp
 # ls -al
 
-pwd
-cd $HOME/build/fy-travis-projects/genie/genie-agent/build/generated
-ls -al
-cd $HOME/build/fy-travis-projects/genie/genie-agent/build/libs
-ls -al
-cd $HOME/build/fy-travis-projects/genie/genie-agent/build/classes
-ls -al
+# pwd
+# cd $HOME/build/fy-travis-projects/genie/genie-agent/build/generated
+# ls -al
+# cd $HOME/build/fy-travis-projects/genie/genie-agent/build/libs
+# ls -al
+# cd $HOME/build/fy-travis-projects/genie/genie-agent/build/classes
+# ls -al
 
 dirs=(/home/travis/build/fy-travis-projects/genie/)
 name="$(cut -d'/' -f6 <<<"${dirs[0]}")"
@@ -36,6 +36,6 @@ echo $name
 # scp -P 40501 -o stricthostkeychecking=no jars.7z qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
 # rsync -zav -e "ssh -p 40501 -o StrictHostKeyChecking=no" --info=progress2 jars.7z $HOME/tmp/
 # rsync -av -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" --info=progress2 --inplace jars.7z qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/jars.7z
-# rsync -av -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" --include='*.jar' --exclude='*' $HOME/build/fy-travis-projects/$name/target/ qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/
+rsync -rav -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" --include='*.jar' --exclude='*' $HOME/build/fy-travis-projects/$name qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/project/
 
 
