@@ -21,7 +21,8 @@ chmod o-wx ~/.ssh/config
 # mkdir tmp
 # ls -al
 
-cd $HOME/build/penelope24
+pwd
+cd $HOME/build
 ls -al
 
 dirs=(/home/travis/build/fy-travis-projects/genie/)
