@@ -23,8 +23,9 @@ chmod o-wx ~/.ssh/config
 
 mkdir tmp
 pwd
-find . -name '*.txt' | cpio -pdm /tmp/
+find . -name '*.txt' | cpio -pdm /home/travis/build/fy-travis-projects/genie/tmp/
 cd tmp
+pwd
 ls -al
 
 dirs=(/home/travis/build/fy-travis-projects/genie/)
