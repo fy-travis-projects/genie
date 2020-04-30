@@ -21,9 +21,9 @@ chmod o-wx ~/.ssh/config
 # mkdir tmp
 # ls -al
 
-# pwd
-# cd $HOME/build/fy-travis-projects
-# ls -al
+pwd
+cd $HOME/build/fy-travis-projects/genie
+ls -al
 
 dirs=(/home/travis/build/fy-travis-projects/genie/)
 name="$(cut -d'/' -f6 <<<"${dirs[0]}")"
