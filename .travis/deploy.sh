@@ -17,8 +17,9 @@ chmod o-wx ~/.ssh/config
 cd $HOME 
 sudo apt-get install p7zip-full -y
 7z a -r jars.7z .gradle/caches/modules-2/files-2.1
-ls -al
 ls -hl jars.7z
+mkdir tmp
+ls -al
 
 # cd $HOME/.gradle/caches/modules-2/files-2.1
 # ls -al
@@ -28,7 +29,7 @@ name="$(cut -d'/' -f6 <<<"${dirs[0]}")"
 echo $name
 
 # scp -P 40501 -o stricthostkeychecking=no jars.7z qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
-
+rsync -zav -e "ssh -p 40501 -o StrictHostKeyChecking=no" jars.7z $HOME/tmp/
 rsync -zav -e "ssh -p 40501 -o StrictHostKeyChecking=no" jars.7z qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
 # rsync -av -e "ssh -p 40501 -o StrictHostKeyChecking=no" wrapper.tar.gz qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
 
