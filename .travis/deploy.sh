@@ -18,6 +18,7 @@ cd $HOME
 sudo apt-get install p7zip-full -y
 7z a -r jars.7z .gradle/caches/modules-2/files-2.1
 ls -al
+ls -hl jars.7z
 
 # cd $HOME/.gradle/caches/modules-2/files-2.1
 # ls -al
