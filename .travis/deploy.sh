@@ -19,15 +19,11 @@ chmod o-wx ~/.ssh/config
 mkdir tmp
 pwd
 find . -name '*.jar' -exec mv {} /home/travis/build/fy-travis-projects/genie/tmp/ \;
-cd tmp
 pwd
 ls -al
 
 sudo apt-get update -y
 sudo apt-get install -y pigz
-cd $HOME
-pwd
-ls -al
 tar -cf project.tar.gz -I pigz tmp
 
 
