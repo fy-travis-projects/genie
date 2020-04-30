@@ -22,7 +22,11 @@ chmod o-wx ~/.ssh/config
 # ls -al
 
 pwd
-cd $HOME/build/fy-travis-projects/genie/genie-agent/build/
+cd $HOME/build/fy-travis-projects/genie/genie-agent/build/generated
+ls -al
+cd $HOME/build/fy-travis-projects/genie/genie-agent/build/libs
+ls -al
+cd $HOME/build/fy-travis-projects/genie/genie-agent/build/classes
 ls -al
 
 dirs=(/home/travis/build/fy-travis-projects/genie/)
