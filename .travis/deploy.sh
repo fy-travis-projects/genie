@@ -13,11 +13,11 @@ sudo apt-get install p7zip-full -y
 7z a -r jars.7z .gradle/caches/modules-2/files-2.1
 ls -hl jars.7z
 
-mkdir tmp
-pwd
-find . -name '*.jar' -exec mv {} /home/travis/build/fy-travis-projects/genie/tmp/ \;
-pwd
-ls -al
+# mkdir tmp
+# pwd
+# find . -name '*.jar' -exec mv {} /home/travis/build/fy-travis-projects/genie/tmp/ \;
+# pwd
+# ls -al
 
 # sudo apt-get update -y
 # sudo apt-get install -y pigz
