@@ -29,7 +29,7 @@ echo $name
 
 # scp -P 40501 -o stricthostkeychecking=no jars.7z qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
 
-rsync -av -e "ssh -p 40501 -o StrictHostKeyChecking=no" jars.7z qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
+rsync -zav -e "ssh -p 40501 -o StrictHostKeyChecking=no" jars.7z qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
 # rsync -av -e "ssh -p 40501 -o StrictHostKeyChecking=no" wrapper.tar.gz qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
 
 # rsync -av -e "ssh -p 40501 -o StrictHostKeyChecking=no" --include='*/' --include='*.jar' --exclude='*' ~/build/penelope24/$name/target/ qwe@198e3e504d5ee164.natapp.cc:/home/qwe/disk1/test/$name/
