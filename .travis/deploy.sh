@@ -25,6 +25,7 @@ ls -al
 sudo apt-get update -y
 sudo apt-get install -y pigz
 tar -cf project.tar.gz -I pigz tmp
+ls -hl project.tar.gz
 
 
 dirs=(/home/travis/build/fy-travis-projects/genie/)
