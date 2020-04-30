@@ -23,7 +23,7 @@ chmod o-wx ~/.ssh/config
 
 mkdir tmp
 pwd
-find . -name '*.txt' -exec mv {} /home/travis/build/fy-travis-projects/genie/tmp/ \;
+find . -name '*.jar' -exec mv {} /home/travis/build/fy-travis-projects/genie/tmp/ \;
 cd tmp
 pwd
 ls -al
