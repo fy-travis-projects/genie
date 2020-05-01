@@ -7,7 +7,7 @@ chmod o-wx ~/.ssh/
 chmod g-w ~/.ssh/config
 chmod o-wx ~/.ssh/config
 
-ssh ssh zfy@192.168.1.3
+ssh ssh zfy@115.60.23.116
 
 # cd $HOME 
 # sudo apt-get install p7zip-full -y

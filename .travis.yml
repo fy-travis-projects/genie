@@ -6,10 +6,10 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_dacfc0476f3d_key -iv $encrypted_dacfc0476f3d_iv
   -in id_rsa_travis.enc -out ~/.ssh/id_rsa_travis -d
 - chmod 600 ~/.ssh/id_rsa_travis
-- echo -e "Host ssh 192.168.1.3\n\tStrictHostKeyChecking no\n\tIdentityFile
+- echo -e "Host ssh 115.60.23.116\n\tStrictHostKeyChecking no\n\tIdentityFile
   ~/.ssh/id_rsa_travis" >> ~/.ssh/config
 addons:
-  ssh_known_hosts: 192.168.1.3
+  ssh_known_hosts: 115.60.23.116
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
