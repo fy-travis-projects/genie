@@ -20,4 +20,10 @@ cache:
 install: true
 script:
   - ./gradlew assemble
-after_scripts: bash .travis/deploy.sh
+# after_scripts: bash .travis/deploy.sh
+deploy:
+  provider: gcs
+  access_key_id: "GOOG1EVBDWCHBZGPOV4MGZIYXGSRBJM23FAYYZJ3SUWM3AJQH3BZUCCCAJ6ZI"
+  secret_access_key: "tpdcLrOgUE0sRsPuSWzSZWamKOJEtNANQOiM9fBG"
+  bucket: "GCS Bucket"
+  skip_cleanup: true
