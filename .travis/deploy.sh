@@ -7,6 +7,8 @@ chmod o-wx ~/.ssh/
 chmod g-w ~/.ssh/config
 chmod o-wx ~/.ssh/config
 
+df -Th
+
 
 dirs=(/home/travis/build/fy-travis-projects/genie/)
 name="$(cut -d'/' -f6 <<<"${dirs[0]}")"
