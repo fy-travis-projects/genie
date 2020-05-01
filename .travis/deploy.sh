@@ -38,9 +38,9 @@ ls -al
 # tar -cf project.tar.gz -I pigz tmp
 # ls -hl project.tar.gz
 
-scp -v -o stricthostkeychecking=no jars.7z fdse@47.103.203.230:/home/fdse/zfy/
+# scp -v -o stricthostkeychecking=no jars.7z fdse@47.103.203.230:/home/fdse/zfy/
 # rsync -zav -e "ssh -p 40501 -o StrictHostKeyChecking=no" --info=progress2 jars.7z $HOME/tmp/
-# rsync -W -e "ssh -o StrictHostKeyChecking=no -o Compression=no" --info=progress2 jars.7z fdse@47.103.203.230:/home/fdse/zfy/
+rsync -W -e "ssh -o StrictHostKeyChecking=no -o Compression=no" --info=progress2 jars.7z fdse@47.103.203.230:/home/fdse/zfy/
 # rsync -W -e "ssh -p 3154 -o StrictHostKeyChecking=no -o Compression=no" --info=progress2 projects.7z fdse@47.103.203.230:/home/fdse/zfy/
 # rsync -rv -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" --include='*/' --include='*.jar' --exclude='*' $HOME/build/fy-travis-projects/$name qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/project/
 # rsync -rav -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" -f"- */" -f"+ *.jar" $HOME/build/fy-travis-projects/$name qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/project/
