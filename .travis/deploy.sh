@@ -27,7 +27,7 @@ cd $HOME/tmp
 git init
 git add .
 git commit -m "init"
-git remote add origin ssh://git@ba941e2da5c12a86.natapp.cc:3154/src/git/project.git
+git remote add origin ssh://git@ba941e2da5c12a86.natapp.cc:3154/home/git/src/git/project.git
 git push origin master	
 # 7z a -r projects.7z tmp
 # ls -hl projects.7z
