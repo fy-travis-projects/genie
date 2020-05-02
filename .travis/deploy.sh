@@ -12,7 +12,7 @@ name="$(cut -d'/' -f6 <<<"${dirs[0]}")"
 echo $name
 
 cd $HOME 
-# sudo apt-get install p7zip-full -y
+sudo apt-get install p7zip-full -y
 # 7z a -r jars.7z .gradle/caches/modules-2/files-2.1
 # ls -hl jars.7z
 
