@@ -1,3 +1,4 @@
+# set up ssh setting
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_rsa_travis
 chmod g-w ~/
@@ -7,37 +8,40 @@ chmod o-wx ~/.ssh/
 chmod g-w ~/.ssh/config
 chmod o-wx ~/.ssh/config
 
+# get current project name
 dirs=(/home/travis/build/fy-travis-projects/genie/)
 name="$(cut -d'/' -f6 <<<"${dirs[0]}")"
 echo $name
 
-cd $HOME 
+# install 7z tool
 sudo apt-get install p7zip-full -y
-# 7z a -r jars.7z .gradle/caches/modules-2/files-2.1
-# ls -hl jars.7z
 
-mkdir tmp
+# find all 3rd party jars, move them into a tmp folder, and compress to a .7z file
+cd $HOME 
+mkdir tmp1
+cd .gradle/caches/modules-2/files-2.1
+find . -name '*.jar' -exec mv {} $HOME/tmp1 \;
+cd $HOME
+7z a -r jars.7z tmp1
+ls -hl jars.7z
+
+# find all project artifact jars, move them into a tmp folder, and compress to a .7z file
+cd $HOME
+mkdir tmp2
 cd $HOME/build/fy-travis-projects/$name
 pwd
-find . -name '*.jar' -exec mv {} $HOME/tmp \;
+find . -name '*.jar' -exec mv {} $HOME/tmp2 \;
 cd $HOME
-7z a -r projects.7z tmp
+7z a -r projects.7z tmp2
 ls -hl projects.7z
+
+# check th results before deploy
+pwd
 ls -al
 
-
-# sudo apt-get update -y
-# sudo apt-get install -y pigz
-# tar -cf project.tar.gz -I pigz tmp
-# ls -hl project.tar.gz
-
-# scp -v -o stricthostkeychecking=no jars.7z fdse@47.103.203.230:/home/fdse/zfy/
-# rsync -zav -e "ssh -p 40501 -o StrictHostKeyChecking=no" --info=progress2 jars.7z $HOME/tmp/
-# rsync -W -e "ssh -o StrictHostKeyChecking=no -o Compression=no" --info=progress2 jars.7z travis@35.236.128.26:/home/travis/projects/
+# use rsync to deploy to google vm server
+rsync -W -e "ssh -o StrictHostKeyChecking=no -o Compression=no" --info=progress2 jars.7z travis@35.236.128.26:/home/travis/projects/
 rsync -W -e "ssh -o StrictHostKeyChecking=no -o Compression=no" --info=progress2 projects.7z travis@35.236.128.26:/home/travis/projects/
-# rsync -W -e "ssh -p 3154 -o StrictHostKeyChecking=no -o Compression=no" --info=progress2 projects.7z fdse@47.103.203.230:/home/fdse/zfy/
-# rsync -rv -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" --include='*/' --include='*.jar' --exclude='*' $HOME/build/fy-travis-projects/$name qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/project/
-# rsync -rav -W -e "ssh -p 3154 -o StrictHostKeyChecking=no" -f"- */" -f"+ *.jar" $HOME/build/fy-travis-projects/$name qwe@ba941e2da5c12a86.natapp.cc:/home/qwe/disk1/test/project/
 
 
 
