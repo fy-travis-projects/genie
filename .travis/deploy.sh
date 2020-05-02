@@ -9,39 +9,35 @@ chmod g-w ~/.ssh/config
 chmod o-wx ~/.ssh/config
 
 # get current project name
-dirs=(/home/travis/build/fy-travis-projects/genie/)
+dirs=(/home/travis/build/fy-travis-projects/*)
 name="$(cut -d'/' -f6 <<<"${dirs[0]}")"
 echo $name
 
 # install 7z tool
-sudo apt-get install p7zip-full -y
+# sudo apt-get install p7zip-full -y
 
-# find all 3rd party jars, move them into a tmp folder, and compress to a .7z file
+# find all 3rd party jars, move them into a tmp folder
 cd $HOME 
-mkdir tmp1
+mkdir lib
 cd .gradle/caches/modules-2/files-2.1
-find . -name '*.jar' -exec mv {} $HOME/tmp1 \;
-cd $HOME
-7z a -r jars.7z tmp1
-ls -hl jars.7z
+find . -name '*.jar' -exec mv {} $HOME/lib \;
 
-# find all project artifact jars, move them into a tmp folder, and compress to a .7z file
+# find all project artifact jars, move them into a tmp folder
 cd $HOME
-mkdir tmp2
+mkdir project
 cd $HOME/build/fy-travis-projects/$name
-pwd
-find . -name '*.jar' -exec mv {} $HOME/tmp2 \;
+find . -name '*.jar' -exec mv {} $HOME/project \;
 cd $HOME
-7z a -r projects.7z tmp2
-ls -hl projects.7z
+# 7z a -r projects.7z tmp2
+# ls -hl projects.7z
 
 # check th results before deploy
 pwd
 ls -al
 
 # use rsync to deploy to google vm server
-rsync -W -e "ssh -o StrictHostKeyChecking=no -o Compression=no" --info=progress2 jars.7z travis@35.236.128.26:/home/travis/projects/
-rsync -W -e "ssh -o StrictHostKeyChecking=no -o Compression=no" --info=progress2 projects.7z travis@35.236.128.26:/home/travis/projects/
+rsync -W -e "ssh -o StrictHostKeyChecking=no -o Compression=no" --info=progress2 lib travis@35.236.128.26:/home/travis/projects/$name/
+rsync -W -e "ssh -o StrictHostKeyChecking=no -o Compression=no" --info=progress2 project travis@35.236.128.26:/home/travis/projects/$name/
 
 
 
